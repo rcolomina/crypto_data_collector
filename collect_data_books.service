@@ -1,0 +1,13 @@
+[Unit]
+Description=Collecting Books From Crypto Exchanges
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/trading_crypto_api
+ExecStart=/usr/bin/python /home/pi/trading_crypto_api/collect_data_books.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
