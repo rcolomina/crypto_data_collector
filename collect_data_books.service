@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=simple
 User=pi
-WorkingDirectory=/home/pi/trading_crypto_api
-ExecStart=/usr/bin/python /home/pi/trading_crypto_api/collect_data_books.py
+WorkingDirectory=/home/pi/crypto_data_collector
+ExecStart=/usr/bin/python3 /home/pi/crypto_data_collector/collect_data_books.py
 Restart=on-failure
 
 [Install]
