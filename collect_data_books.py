@@ -15,7 +15,12 @@ logger.addHandler(console_handler)
 
 # SETUP LOG HANDLER ON OUTPUT FILE
 logger.setLevel(logging.DEBUG)
-path="/home/pi/trading_crypto_api/logs/books_bitmex.log"
+
+user_path="/home/pi"
+config_path="crypto_data_collector"
+log_path="logs"
+
+path=user_path+"/"+config_path+"/books_bitmex.log"
 handler = TimedRotatingFileHandler(path,when="m",interval=1)
 logger.addHandler(handler)
 
