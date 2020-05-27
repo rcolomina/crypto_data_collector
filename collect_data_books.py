@@ -17,13 +17,17 @@ logger.addHandler(console_handler)
 # SETUP LOG HANDLER ON OUTPUT FILE
 logger.setLevel(logging.DEBUG)
 
-user_path=conf.USER_PATH
-config_path=conf.CONFIG_PATH
-log_path=conf.LOG_PATH
-log_filename=conf.LOG_FILENAME
+user_path    = conf.USER_PATH
+config_path  = conf.CONFIG_PATH
+log_path     = conf.LOG_PATH
+log_filename = conf.LOG_FILENAME
 base_uri_bitmex = conf.BASE_URI_BITMEX
 
-path = user_path + "/" + config_path + "/" + log_filename
+path = "{}/{}/{}/{}".format(user_path,
+                            config_path,
+                            log_path,
+                            log_filename)
+
 handler = TimedRotatingFileHandler(path,when="m",interval=1)
 logger.addHandler(handler)
 
